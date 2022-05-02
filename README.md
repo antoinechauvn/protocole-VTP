@@ -28,9 +28,20 @@ travers des liens « trunk » (Cisco ISL ou IEEE 802.1Q).
 * Transparent: Le switch reçoit les mises à jour et les transmet à ses voisins sans les prendre en compte. Il peut créer, modifier ou supprimer ses propres VLAN mais ne les transmet pas 
 <hr>
 
+### VTP Version 2:
+* Création du mode Transparent : ce switch transmet sans regarder la version VTP
+* Les versions 1 et 2 supportent uniquement les VLAN 1 à 1005. Elles peuvent travailler ensemble
+excepter au niveau du mode Transparent.
+
+### VTP Version 3:
+* Supporte les VLAN 1 au VLAN 4095
+* Supporte le PVLAN et le SPAN
+* Création du VTP Mode FF
+* Synchronisation des database du protocole MST
+* Possibilité de mettre un switch en mode "secondary"
+
 * Les messages VTP diffuse des annonces de création, de suppression ou de modification de VLAN. Cette diffusion s’effectue à travers tous les switchs grâce à une trame niveau 2 avec une adresse de destination MAC `multicast` bien particulière qui est `01-00-0C-CC-CC-CC`. 
 * Ils sont envoyés toutes les 5 minutes ou bien, à chaque fois qu'il y a une modification sur les VLAN.
-* VTP ne gère que la plage de VLAN comprise entre 1 et 1005. La plage étendue 1006 à 4096 n’est pas supportée. Pour cela, il faut basculer en mode Transparent sur tous les switchs et créer ses VLANS étendus manuellement
 * La version VTP par défaut activée sur un switch est la 1. Cependant, il existe trois versions VTP différentes.
 * Il est possible de modifier le switch pour qu’il exécute la version VTP 2 ou 3. Les différentes versions ne sont pas compatibles entre eux, il faut obligatoirement la même version dans le même domaine VTP
 
