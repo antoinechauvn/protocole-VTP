@@ -40,6 +40,8 @@ excepter au niveau du mode Transparent.
 * Synchronisation des database du protocole MST
 * Possibilité de mettre un switch en mode "secondary"
 
+<hr>
+
 * Les messages VTP diffuse des annonces de création, de suppression ou de modification de VLAN. Cette diffusion s’effectue à travers tous les switchs grâce à une trame niveau 2 avec une adresse de destination MAC `multicast` bien particulière qui est `01-00-0C-CC-CC-CC`. 
 * Ils sont envoyés toutes les 5 minutes ou bien, à chaque fois qu'il y a une modification sur les VLAN.
 * La version VTP par défaut activée sur un switch est la 1. Cependant, il existe trois versions VTP différentes.
